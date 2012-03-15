@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "tagit"
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Russell Garner"]
@@ -17,7 +17,64 @@ Gem::Specification.new do |s|
     "README.markdown"
   ]
   s.files = [
-    "VERSION"
+    ".document",
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE",
+    "README.markdown",
+    "Rakefile",
+    "VERSION",
+    "app/assets/images/tagit/.gitkeep",
+    "app/assets/javascripts/tagit/application.js",
+    "app/assets/stylesheets/tagit/application.css",
+    "app/controllers/tagit/application_controller.rb",
+    "app/controllers/tagit/versions_controller.rb",
+    "app/helpers/tagit/application_helper.rb",
+    "app/views/layouts/tagit/application.html.erb",
+    "app/views/tagit/versions/current.html.erb",
+    "app/views/tagit/versions/index.html.erb",
+    "config/routes.rb",
+    "lib/tagit.rb",
+    "lib/tagit/engine.rb",
+    "lib/tagit/version.rb",
+    "lib/tasks/tagit_tasks.rake",
+    "script/rails",
+    "spec/dummy/README.rdoc",
+    "spec/dummy/Rakefile",
+    "spec/dummy/app/assets/javascripts/application.js",
+    "spec/dummy/app/assets/stylesheets/application.css",
+    "spec/dummy/app/controllers/application_controller.rb",
+    "spec/dummy/app/helpers/application_helper.rb",
+    "spec/dummy/app/mailers/.gitkeep",
+    "spec/dummy/app/models/.gitkeep",
+    "spec/dummy/app/views/layouts/application.html.erb",
+    "spec/dummy/config.ru",
+    "spec/dummy/config/application.rb",
+    "spec/dummy/config/boot.rb",
+    "spec/dummy/config/database.yml",
+    "spec/dummy/config/environment.rb",
+    "spec/dummy/config/environments/development.rb",
+    "spec/dummy/config/environments/production.rb",
+    "spec/dummy/config/environments/test.rb",
+    "spec/dummy/config/initializers/backtrace_silencers.rb",
+    "spec/dummy/config/initializers/inflections.rb",
+    "spec/dummy/config/initializers/mime_types.rb",
+    "spec/dummy/config/initializers/secret_token.rb",
+    "spec/dummy/config/initializers/session_store.rb",
+    "spec/dummy/config/initializers/wrap_parameters.rb",
+    "spec/dummy/config/locales/en.yml",
+    "spec/dummy/config/routes.rb",
+    "spec/dummy/lib/assets/.gitkeep",
+    "spec/dummy/log/.gitkeep",
+    "spec/dummy/log/test.log",
+    "spec/dummy/public/404.html",
+    "spec/dummy/public/422.html",
+    "spec/dummy/public/500.html",
+    "spec/dummy/public/favicon.ico",
+    "spec/dummy/script/rails",
+    "spec/lib/tagit/version_spec.rb",
+    "spec/spec_helper.rb",
+    "tagit.gemspec"
   ]
   s.homepage = "http://github.com/rgarner/tagit"
   s.licenses = ["MIT"]
