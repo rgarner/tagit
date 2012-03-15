@@ -33,6 +33,10 @@ module Tagit
     end
 
     describe "Comparison" do
+      specify "Versions should be equal" do
+        Version.from_s('v3.2.1').should == Version.from_s('v3.2.1')
+      end
+
       specify "Version should be bigger than nil" do
         Version.from_s('v0.0').should > nil
       end
@@ -58,13 +62,24 @@ module Tagit
       end
     end
 
-    describe ".current" do
+    describe "Pseudo-finders" do
       before { Version.stub(:git_tags).and_return("v0.1\nv0.2\nv0.3\nproduction_things") }
-      subject { Version.current }
 
-      its(:major) { should eql(0) }
-      its(:minor) { should eql(3) }
-      its(:patch) { should be_nil }
+      describe ".all" do
+        subject { Version.all }
+
+        it { should be_an(Array) }
+        it { should have(3).versions }
+        specify { subject.each { |version| version.should be_a(Version) } }
+      end
+
+      describe ".current" do
+        subject { Version.current }
+
+        its(:major) { should eql(0) }
+        its(:minor) { should eql(3) }
+        its(:patch) { should be_nil }
+      end
     end
   end
 end

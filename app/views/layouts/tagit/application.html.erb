@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tagit</title>
+  <title><%= content_for(:title) %></title>
   <%= stylesheet_link_tag    "tagit/application", :media => "all" %>
   <%= javascript_include_tag "tagit/application" %>
   <%= csrf_meta_tags %>

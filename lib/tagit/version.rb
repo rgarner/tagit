@@ -18,16 +18,14 @@ module Tagit
     end
 
     def self.current
+      all.sort.last
+    end
+
+    def self.all
       lines = git_tags.split("\n")
       lines.inject([]) do |results, line|
         results << Version.new($1, $2, $3) if VERSION_REGEX.match(line)
         results
-      end.sort.last
-    end
-
-    def self.git_tags
-      if File.exists?(File.join(Rails.root, ('.git/HEAD')))
-        `cd #{Rails.root} && git tag`
       end
     end
 
@@ -42,6 +40,17 @@ module Tagit
 
     def to_s
       "v#{major}.#{minor}#{".#{patch}" if patch}"
+    end
+
+    private
+
+    def self.run(command)
+      raise RuntimeError, "#{Rails.root} is not a git root" unless File.exists?(File.join(Rails.root, ('.git/HEAD')))
+      `cd #{Rails.root} && #{command}`
+    end
+
+    def self.git_tags
+      run('git tag')
     end
   end
 end
