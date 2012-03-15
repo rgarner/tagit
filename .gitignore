@@ -1,0 +1,9 @@
+.bundle/
+log/*.log
+pkg/
+coverage
+coverage.data
+rdoc
+doc
+.yardoc
+.idea
