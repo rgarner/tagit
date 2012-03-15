@@ -3,6 +3,8 @@ module Tagit
   class VersionsController < ActionController::Base
     respond_to :html, :text, :json
 
+    layout 'tagit/application'
+
     def current
       @version = Tagit::Version.current
       respond_with(@version) do |format|
