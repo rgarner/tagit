@@ -7,3 +7,5 @@ rdoc
 doc
 .yardoc
 .idea
+.rvmrc
+Gemfile.lock
